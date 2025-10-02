@@ -5,23 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cinematographer Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script> <!-- add this -->
 </head>
 <body>
 
   <!-- =========================== -->
   <!--  Top Bar / Company Logo     -->
-  <!--  (component: company-logo)  -->
   <!-- =========================== -->
   <header class="topbar">
-    <a class="company-logo" href="/" aria-label="Company home">
-      <!-- Replace with your SVG/PNG -->
+    <!-- <a class="company-logo" href="/" aria-label="Company home">
       <img src="logo-placeholder.svg" alt="XO Film" />
-    </a>
+    </a> -->
   </header>
 
   <!-- =========================== -->
   <!--  Artist Name + Role         -->
-  <!--  (component: artist-hero)   -->
   <!-- =========================== -->
   <section class="artist-hero">
     <h1 class="artist-name">ANTÓNIO REALISTA</h1>
@@ -30,25 +28,47 @@
 
   <!-- =========================== -->
   <!--  Header Tabs / Navigation   -->
-  <!--  (component: header-nav)    -->
   <!-- =========================== -->
   <nav class="header-nav" aria-label="Primary">
     <ul class="tabs">
-      <li class="tab is-active"><a href="#">ALL</a></li>
-      <li class="tab"><a href="#">CORPORATE</a></li>
-      <li class="tab"><a href="#">INSTITUCIONAL</a></li>
-      <li class="tab"><a href="#">DIGITAL</a></li>
+      <li class="tab is-active"><a href="#" data-filter="all">ALL</a></li>
+      <li class="tab"><a href="#" data-filter="corporate">CORPORATE</a></li>
+      <li class="tab"><a href="#" data-filter="institucional">INSTITUCIONAL</a></li>
+      <li class="tab"><a href="#" data-filter="digital">DIGITAL</a></li>
     </ul>
   </nav>
 
   <!-- Divider -->
   <div class="rule"></div>
 
+  <!-- =========================== -->
+  <!--  Feature Video (NEW)        -->
+  <!-- =========================== -->
+  <section class="video-hero container" id="feature-video" aria-label="Featured video">
+    <div class="video-frame">
+      <!-- Replace `assets/reel.mp4` and poster with your actual files -->
+      <video id="reel" controls preload="metadata" poster="assets/reel-poster.jpg">
+        <source src="assets/reel.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p class="video-caption">Showreel</p>
+  </section>
+
+  <!-- floating arrows -->
+  <button class="jump-arrow to-gallery" aria-controls="gallery" aria-label="Go to images">
+    <!-- right arrow -->
+    ➜
+  </button>
+  <button class="jump-arrow to-video is-hidden" aria-controls="feature-video" aria-label="Back to video">
+    <!-- left arrow -->
+    ←
+  </button>
+
   <!-- ================================== -->
-  <!--  Content Grid (placeholder pieces) -->
-  <!--  (component: gallery-grid)         -->
+  <!--  Gallery Grid                      -->
   <!-- ================================== -->
-  <main class="gallery-grid">
+  <main class="gallery-grid is-hidden" id="gallery" aria-label="Portfolio images">
     <figure class="thumb"><img src="https://picsum.photos/800/500?1" alt="Work 1"></figure>
     <figure class="thumb"><img src="https://picsum.photos/800/500?2" alt="Work 2"></figure>
     <figure class="thumb"><img src="https://picsum.photos/800/500?3" alt="Work 3"></figure>
