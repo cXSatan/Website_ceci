@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cinematographer Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="app.js" defer></script> <!-- add this -->
+  <script src="app.js" defer></script>
 </head>
 <body>
 
@@ -31,10 +31,12 @@
   <!-- =========================== -->
   <nav class="header-nav" aria-label="Primary">
     <ul class="tabs">
-      <li class="tab is-active"><a href="#" data-filter="all">ALL</a></li>
-      <li class="tab"><a href="#" data-filter="corporate">CORPORATE</a></li>
-      <li class="tab"><a href="#" data-filter="institucional">INSTITUCIONAL</a></li>
-      <li class="tab"><a href="#" data-filter="digital">DIGITAL</a></li>
+      <li class="tab is-active" data-filter="all"><a href="#" data-filter="all" aria-selected="true">ALL</a></li>
+      <li class="tab" data-filter="corporate"><a href="#" data-filter="corporate">CORPORATE</a></li>
+      <li class="tab" data-filter="institucional"><a href="#" data-filter="institucional">INSTITUCIONAL</a></li>
+      <li class="tab" data-filter="digital"><a href="#" data-filter="digital">DIGITAL</a></li>
+      <!-- My Info (separate page) -->
+      <li class="tab"><a href="my-info.html" aria-label="About the author">MY INFO</a></li>
     </ul>
   </nav>
 
@@ -42,11 +44,10 @@
   <div class="rule"></div>
 
   <!-- =========================== -->
-  <!--  Feature Video (NEW)        -->
+  <!--  Feature Video              -->
   <!-- =========================== -->
   <section class="video-hero container" id="feature-video" aria-label="Featured video">
     <div class="video-frame">
-      <!-- Replace `assets/reel.mp4` and poster with your actual files -->
       <video id="reel" controls preload="metadata" poster="assets/reel-poster.jpg">
         <source src="assets/reel.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -56,26 +57,13 @@
   </section>
 
   <!-- floating arrows -->
-  <button class="jump-arrow to-gallery" aria-controls="gallery" aria-label="Go to images">
-    <!-- right arrow -->
-    ➜
-  </button>
-  <button class="jump-arrow to-video is-hidden" aria-controls="feature-video" aria-label="Back to video">
-    <!-- left arrow -->
-    ←
-  </button>
+  <button class="jump-arrow to-gallery" aria-controls="gallery" aria-label="Go to images">➜</button>
+  <button class="jump-arrow to-video is-hidden" aria-controls="feature-video" aria-label="Back to video">←</button>
 
   <!-- ================================== -->
-  <!--  Gallery Grid                      -->
+  <!--  Gallery Grid (dynamic)            -->
   <!-- ================================== -->
-  <main class="gallery-grid is-hidden" id="gallery" aria-label="Portfolio images">
-    <figure class="thumb"><img src="https://picsum.photos/800/500?1" alt="Work 1"></figure>
-    <figure class="thumb"><img src="https://picsum.photos/800/500?2" alt="Work 2"></figure>
-    <figure class="thumb"><img src="https://picsum.photos/800/500?3" alt="Work 3"></figure>
-    <figure class="thumb"><img src="https://picsum.photos/800/500?4" alt="Work 4"></figure>
-    <figure class="thumb"><img src="https://picsum.photos/800/500?5" alt="Work 5"></figure>
-    <figure class="thumb"><img src="https://picsum.photos/800/500?6" alt="Work 6"></figure>
-  </main>
+  <main class="gallery-grid is-hidden" id="gallery" aria-label="Portfolio images"></main>
 
   <!-- Optional footer -->
   <footer class="site-footer">
