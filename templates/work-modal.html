@@ -1,0 +1,24 @@
+<!-- templates/work-modal.html -->
+<template id="work-modal-tpl">
+  <div class="modal-backdrop is-hidden" id="work-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-shell" role="document">
+      <header class="modal-header">
+        <h2 id="modal-title" class="modal-title">Project</h2>
+      </header>
+      <div class="modal-media" id="modal-media" aria-label="Video player"></div>
+      <section class="modal-body">
+        <p id="modal-desc" class="modal-desc"></p>
+      </section>
+      <section class="modal-carousel">
+        <h3 class="carousel-title">More Videos</h3>
+        <div class="carousel-container">
+          <button class="carousel-btn carousel-prev" aria-label="Previous videos">‹</button>
+          <div class="carousel-track" id="carousel-track">
+            <!-- Carousel items will be populated by JavaScript -->
+          </div>
+          <button class="carousel-btn carousel-next" aria-label="Next videos">›</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</template>
